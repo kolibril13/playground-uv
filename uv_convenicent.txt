@@ -1,0 +1,67 @@
+uv gerneral commands
+
+uv venv : Create a venv 
+uv run: Run a script.
+uv sync: Sync the project's dependencies with the environment.
+uv run  --python 3.10  hi.py : specific python version 
+uv add --script  hi.py 'requests<3' 'polars' : add specific dependencies 
+uv cache clean : clear the cache
+
+
+uv run: Run a command in the project environment.
+uv run jupyter lab                              
+
+
+Run a blender script with uv:
+uv run --python 3.11 blen.py
+
+MARIMO Workflow for a new project:
+
+uv venv
+uv pip install marimo
+uv run marimo edit hi.py
+uv run marimo edit --sandbox  hi.py
+
+
+uv run --with bpy --python 3.11 blen.py
+
+
+uvx marimo edit --sandbox example_ipydrop_csv.py
+uv run --python 3.11 --with marimo marimo edit --sandbox blender_drag_n_drop.py
+
+LONG:
+uv run --python 3.11 --with marimo marimo edit --sandbox hi.py
+
+MIDDLE:
+uv tool run marimo edit --sandbox hi.py
+uvx marimo edit --sandbox hi.py
+(these two are the same)
+
+SHORTEST:
+
+marimo edit --sandbox hi.py
+(requires global installation with `uv tool install marimo`)
+
+
+Global update is possible with 
+`uv tool install marimo --upgrade`
+
+
+--python 3.11
+
+
+uvx marimo edit --sandbox hi.py
+
+
+uvx --python 3.11 marimo edit --sandbox hi.py
+
+
+
+
+trevor manz
+Sep 23
+to prototype ideas, either:
+uv run --with jupyterlab --with anywidget jupyter lab
+uvx marimo edit --sandbox <notebook>
+uvx jupyter lab 
+the latter becoming my goto for convenience/reproducibility

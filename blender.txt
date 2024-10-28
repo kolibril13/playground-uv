@@ -1,0 +1,9 @@
+uvx blender_notebook install --blender-exec="/Applications/Blender.app/Contents/MacOS/Blender"
+uvx jupyter lab
+
+
+uvx jupyter kernelspec list  
+uvx blender_notebook remove
+
+
+(https://github.com/cheng-chi/blender_notebook)
