@@ -12,5 +12,6 @@ def uses_numpy():
     version = metadata.version("numpy")
     print(f"hello from numpy=={version}")
 
-for version in ("1.26.4", "2.2.2"):
-    Env(f"numpy=={version}", python="3.11").run(uses_numpy)
+
+Env("numpy==1.26.4", python="3.11").run(uses_numpy)
+Env("numpy==2.2.2" , python="3.11").run(uses_numpy)
